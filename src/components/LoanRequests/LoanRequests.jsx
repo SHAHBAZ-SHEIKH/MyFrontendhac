@@ -10,13 +10,13 @@ const LoanRequests = () => {
   const [loanRequests, setLoanRequests] = useState([]);
   const [showPopup, setShowPopup] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-  const user = useSelector((state) => state.user.currentUser.data); // Get the logged-in user from Redux
+  const user = useSelector((state) => state.user?.currentUser?.data); // Get the logged-in user from Redux
 
   useEffect(() => {
     const fetchLoanRequests = async () => {
       try {
         const response = await axios.get("https://myhackathonbackend-production.up.railway.app/api/loan");
-        console.log(response.data);
+        console.log(response?.data);
         const userLoans = response.data.filter((loan) => loan.userId === user._id); 
         console.log(userLoans);
         // Filter loans for the current user
