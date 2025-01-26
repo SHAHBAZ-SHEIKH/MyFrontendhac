@@ -10,7 +10,7 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
-  const { loading } = useSelector((state) => state.user); // Access loading state
+  const { loading } = useSelector((state) => state?.user); // Access loading state
   const dispatch = useDispatch();
   const navigate = useNavigate()
 
@@ -28,7 +28,7 @@ const Login = () => {
         { email, password },
         { withCredentials: true }
       );
-      localStorage.setItem('UserToken', (response.data.token));
+      localStorage.setItem('UserToken', (response?.data?.token));
 
       setTimeout(()=>{
         dispatch(loginSuccess(response.data)); // Set user data

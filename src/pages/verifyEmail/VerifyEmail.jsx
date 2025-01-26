@@ -6,7 +6,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const ForgotPasswordSentPage = () => {
-  const user = useSelector((state) => state.user?.currentUser.data);
+  const user = useSelector((state) => state.user?.currentUser);
   const email = user?.email;
   console.log("email",email)
   const navigate = useNavigate();
@@ -20,10 +20,10 @@ const ForgotPasswordSentPage = () => {
         { email },
         { withCredentials: true }
       );
-      console.log(res.data);
+      console.log(res?.data);
       
       
-      toast.success(res.data.message);
+      toast.success(res?.data.message);
       console.log("res", res);
       setTimeout(() => {
         navigate("/verify-email");
