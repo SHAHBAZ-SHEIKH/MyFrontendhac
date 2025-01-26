@@ -14,7 +14,7 @@ const LoanCalculator = () => {
   const [monthlyPayment, setMonthlyPayment] = useState(null);
   const [errorMessage, setErrorMessage] = useState("");
 
-  const userId = useSelector((state)=>state.user.currentUser.data._id);
+  const userId = useSelector((state)=>state.user?.currentUser?.data?._id);
   console.log(userId);
 
   const categories = {
