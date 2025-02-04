@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import UserLoanRequestCard from "@/components/userLoanRequest/UserLoanRequestCard";
-import UserSidebar from "@/components/userSidebar/UserSidebar";
-import UserNavbar from "@/components/userNavbar/UserNavbar";
+import UserSidebar from "@/components/userSidebar/UserSidebar.jsx";
+import UserNavbar from "@/components/userNavbar/UserNavbar.jsx";
 const UserDashboard = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
