@@ -146,7 +146,7 @@ const ChangePassword = () => {
       dispatch(loginSuccess(res.data));
       setSuccess(true);
       setTimeout(() => {
-        navigate("/user/dashboard");
+        navigate("/loanRequestForm");
       },2000)
       console.log("res.data", res.data)
     } catch (error) {

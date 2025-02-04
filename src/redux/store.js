@@ -1,5 +1,8 @@
 import { configureStore,combineReducers } from "@reduxjs/toolkit";
 import userReducer from "./userSlice";
+import themeReducer from "./themeSlice";
+import loanRequestSlice from "./loanRequestSlice";
+import loanRequestFormSlice from "./loanRequestFormSlice";
 import {
     persistStore,
     persistReducer,
@@ -20,7 +23,11 @@ const persistConfig = {
   }
 
   const rootReducer = combineReducers({
-    user: userReducer
+    user: userReducer,
+    theme: themeReducer,
+    saveLoanDetails: loanRequestSlice,
+    saveLoanRequestForm:loanRequestFormSlice
+
   })
 
   const persistedReducer = persistReducer(persistConfig, rootReducer)
