@@ -1,4 +1,4 @@
-import AdminSidebar from "../../components/mySidebar/AdminSidebar";
+import AdminSidebar from "../../components/adminSidebar/AdminSidebar";
 import Navbar from "../../components/adminNavbar/AdminNavbar";
 import "./adminsdashboard.scss";
 import Widget from  "../../components/widget/Widget";
