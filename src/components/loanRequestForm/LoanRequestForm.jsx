@@ -5,7 +5,7 @@ import Navbar from "../Navbar";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { saveLoanRequestForm } from "../../redux/saveLoanRequestFormSlice";
+import { saveLoanRequestForm } from "../../redux/loanRequestFormSlice";
 import jsPDF from "jspdf";
 import "jspdf-autotable";
 
