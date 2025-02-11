@@ -2,8 +2,7 @@ import React, { useState,useEffect } from "react";
 import { useSelector } from "react-redux";
 
 import axios from "axios";
-import UserSidebar from "../../components/userSidebar/UserSidebar";
-import UserNavbar from "../../components/userNavbar/UserNavbar";
+
 
 const UserDashboard = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -44,13 +43,13 @@ const UserDashboard = () => {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Navbar */}
-      <UserNavbar toggleSidebar={toggleSidebar} isSidebarOpen={isSidebarOpen} />
+      {/* <UserNavbar toggleSidebar={toggleSidebar} isSidebarOpen={isSidebarOpen} /> */}
 
       {/* Sidebar (Hidden on Mobile) */}
       <div
         className={`lg:block ${isSidebarOpen ? 'block' : 'hidden'} bg-gray-800 text-white w-64 p-6 fixed top-0 left-0 h-full`}
       >
-        <UserSidebar />
+        {/* <UserSidebar /> */}
       </div>
 
       {/* Main Content */}
