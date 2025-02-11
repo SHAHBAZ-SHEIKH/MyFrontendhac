@@ -1,7 +1,7 @@
 import React, { useState,useEffect } from "react";
 import { useSelector } from "react-redux";
-import UserSidebar from "../../components/userSidebar/UserSidebar";
-import UserNavbar from "../../components/userNavbar/UserNavbar";
+import UserSidebar from "../../components/userSidebar/UserSidebar.jsx";
+import UserNavbar from "../../components/userNavbar/UserNavbar.jsx";
 import axios from "axios";
 
 
