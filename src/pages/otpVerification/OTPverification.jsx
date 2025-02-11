@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import axios from 'axios';
 import { useSelector,useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { signupFailure, signupSuccess } from '@/redux/userSlice';
+import { signupFailure, signupSuccess } from '../../redux/userSlice';
 import { ToastContainer, toast } from 'react-toastify';
 
 

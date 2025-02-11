@@ -4,8 +4,8 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate} from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { signupSuccess } from "@/redux/userSlice";
-import { loginSuccess, loginFailure, loginStart } from "@/redux/userSlice";
+import { signupSuccess } from "../../redux/userSlice";
+import { loginSuccess, loginFailure, loginStart } from "../../redux/userSlice";
 
 const ShowPopup = ({ onClose }) => {
   const [showLogin, setShowLogin] = useState(false);

@@ -5,7 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
-import { loginSuccess } from '@/redux/userSlice';
+import { loginSuccess } from '../../redux/userSlice';
 
 
 const Container = styled.div`

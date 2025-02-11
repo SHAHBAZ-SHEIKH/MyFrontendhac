@@ -4,7 +4,7 @@ import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useSelector, useDispatch } from "react-redux";
-import { loginStart, loginSuccess, loginFailure } from "@/redux/userSlice";
+import { loginStart, loginSuccess, loginFailure } from "../../redux/userSlice";
 
 const Login = () => {
   const [email, setEmail] = useState("");

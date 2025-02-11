@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import Navbar from "../../components/Navbar";
-import ShowPopup from "@/components/ShowPopup";
-import Banner from "@/components/banner/Banner";
-import LoanCategories from "@/components/loanCategories/LoanCategories";
-import LoanCalculator from "@/components/loanCalculator/LoanCalculator";
+import ShowPopup from "../../components/ShowPopup";
+import Banner from "../../components/banner/Banner";
+import LoanCategories from "../../components/loanCategories/LoanCategories";
+import LoanCalculator from "../../components/loanCalculator/LoanCalculator";
 
 const Home = () => {
   const [showPopup, setShowPopup] = useState(false);

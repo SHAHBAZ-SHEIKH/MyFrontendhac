@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useSelector, useDispatch } from "react-redux";
-import { signupFailure, signupStart, signupSuccess } from "@/redux/userSlice";
+import { signupFailure, signupStart, signupSuccess } from "../../redux/userSlice";
 
 const Signup = () => {
   const [formData, setFormData] = useState({
