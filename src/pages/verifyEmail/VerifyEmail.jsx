@@ -7,7 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 const ForgotPasswordSentPage = () => {
   const user = useSelector((state) => state.user?.currentUser);
-  const email = user?.email;
+  const email = user?.data?.email;
   console.log("email",email)
   const navigate = useNavigate();
   
@@ -16,7 +16,7 @@ const ForgotPasswordSentPage = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/auth/forgotpassword",
+        "http://localhost:5000/api/user/forgotpassword",
         { email },
         { withCredentials: true }
       );

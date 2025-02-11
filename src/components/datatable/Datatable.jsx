@@ -12,10 +12,20 @@ const Datatable = ({ columns }) => {
 
   const [list,setList] = useState([])
 
+  const location = useLocation();
+  const path = location.pathname.split("/")[1];
+  console.log("path",path)
+
   useEffect(()=>{
     const getUsers = async () => {
+      const userToken = localStorage.getItem("UserToken")
+      console.log("userToken",userToken)
       try {
-        const res = await axios.get("http://localhost:5000/api/user");
+        const res = await axios.get(`http://localhost:5000/api/${path}`,{
+          headers: {
+            authorization: `Bearer ${userToken}`,
+          }
+        });
         console.log(res.data);
         setList(res.data)
       } catch (error) {
@@ -35,12 +45,12 @@ const Datatable = ({ columns }) => {
       renderCell: (params) => {
         return (
           <div className="cellAction">
-            <Link to="/users/test" style={{ textDecoration: "none" }}>
+            <Link to={`loan/${params.row._id}`} style={{ textDecoration: "none" }}>
               <div className="viewButton">View</div>
             </Link>
             <div
               className="deleteButton"
-              onClick={() => handleDelete(params.row.id)}
+              onClick={() => handleDelete(params.row._id)}
             >
               Delete
             </div>
@@ -53,7 +63,7 @@ const Datatable = ({ columns }) => {
   return (
     <div className="datatable">
       <div className="datatableTitle">
-        {"Users"}
+        {path}
         <Link to={`/newUser`} className="link">
           Add New
         </Link>
@@ -62,7 +72,7 @@ const Datatable = ({ columns }) => {
         <DataGrid
           className="datagrid"
           rows={list || []} // Ensure rows is never undefined
-          columns={columns.concat(actionColumn)}
+          columns={columns?.concat(actionColumn)}
           pageSize={9}
           rowsPerPageOptions={[9]}
           checkboxSelection

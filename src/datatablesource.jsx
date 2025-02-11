@@ -36,51 +36,66 @@ export const userColumns = [
     },
   ];
   
-  export const hotelColumns = [
+  export const appointmentColumns = [
     { field: "_id", headerName: "ID", width: 250 },
     {
-      field: "name",
-      headerName: "Name",
+      field: "userId",
+      headerName: "UserId",
       width: 150,
     },
     {
-      field: "type",
-      headerName: "Type",
+      field: "loanId",
+      headerName: "LoanId",
       width: 100,
     },
     {
-      field: "title",
-      headerName: "Title",
+      field: "office",
+      headerName: "Office",
       width: 230,
     },
     {
-      field: "city",
-      headerName: "City",
+      field: "appointmentDate",
+      headerName: "AppointmentDate",
+      width: 100,
+    },
+    {
+      field: "time",
+      headerName: "Time",
       width: 100,
     },
   ];
   
-  export const roomColumns = [
+  export const LoanRequest = [
     { field: "_id", headerName: "ID", width: 70 },
     {
-      field: "title",
-      headerName: "Title",
-      width: 230,
+      field: "loanAmount",
+      headerName: "LoanAmount",
+      width: 180,
     },
     {
-      field: "desc",
-      headerName: "Description",
-      width: 200,
+      field: "loanCategory",
+      headerName: "LoanCategory",
+      width: 180,
     },
     {
-      field: "price",
-      headerName: "Price",
-      width: 100,
+      field: "loanSubCategory",
+      headerName: "LoanSubCategory",
+      width: 180,
     },
     {
-      field: "maxPeople",
-      headerName: "Max People",
-      width: 100,
+      field: "depositAmount",
+      headerName: "DepositAmount",
+      width: 180,
+    },
+    {
+      field: "loanDuration",
+      headerName: "LoanDuration",
+      width: 180,
+    },
+    {
+      field: "loanStatus",
+      headerName: "LoanStatus",
+      width: 180,
     },
   ];
   

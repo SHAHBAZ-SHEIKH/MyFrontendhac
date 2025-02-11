@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { useSelector } from "react-redux";
 import UserLoanRequestCard from "@/components/userLoanRequest/UserLoanRequestCard";
 import UserSidebar from "../../components/userSidebar/UserSidebar";
 import UserNavbar from "../../components/userNavbar/UserNavbar";
+import axios from "axios";
+
 const UserDashboard = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [loanData,setLoanData] = useState([])
 
   const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
   // Fetching userId from the Redux store (assuming it's stored in state.user)
@@ -12,11 +15,27 @@ const UserDashboard = () => {
   console.log("userId", userId);
 
   // Fetching loan requests from the Redux store (assuming it's stored in state.loans)
-  const loanRequests = useSelector(state => state.saveLoanRequestForm.loanRequestForm);
-  console.log("loanRequests", loanRequests);
+  // const loanRequests = useSelector(state => state.saveLoanRequestForm.loanRequestForm);
+  // console.log("loanRequests", loanRequests);
+
+  useEffect(()=>{
+    const fetchLoanRequests = async () => {
+      try{
+        const response = await axios.get("http://localhost:5000/api/loan")
+        console.log(response.data)
+        setLoanData(response.data)
+      }
+      catch(error){
+        console.log(error)
+      }
+    }
+    fetchLoanRequests();
+  },[])
+
+  
 
   // Filtering the loan requests based on the logged-in userId
-  const userLoanRequests = loanRequests.filter(loan => loan.loan.userId === userId);
+  const userLoanRequests = loanData.filter(loan => loan.userId === userId);
   console.log("userLoanRequests", userLoanRequests);
 
   
@@ -41,12 +60,12 @@ const UserDashboard = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {userLoanRequests.map((loan, index) => (
                 <div key={index} className="bg-white p-4 rounded-lg shadow-md border-l-4 border-blue-500">
-                  <h3 className="text-lg font-semibold text-blue-600">{loan.loan.loanCategory}</h3>
-                  <p className="text-gray-500">{loan.loan.loanSubCategory}</p>
-                  <p className="text-gray-700"><strong>Deposit Amount:</strong> {loan.loan.depositAmount}</p>
-                  <p className="text-gray-700"><strong>Required Amount:</strong> {loan.loan.loanAmount}</p>
-                  <button className={`text-sm font-bold mt-2 ${loan.loan.loanStatus === "Approved" ? "text-green-600" : "text-yellow-500"}`}>
-                    {loan.loan.loanStatus}
+                  <h3 className="text-lg font-semibold text-blue-600">{loan.loanCategory}</h3>
+                  <p className="text-gray-500">{loan.loanSubCategory}</p>
+                  <p className="text-gray-700"><strong>Deposit Amount:</strong> {loan.depositAmount}</p>
+                  <p className="text-gray-700"><strong>Required Amount:</strong> {loan.loanAmount}</p>
+                  <button className={`text-sm font-bold mt-2 ${loan.loanStatus === "Approved" ? "text-green-600" : "text-yellow-500"}`}>
+                    {loan.loanStatus}
                   </button>
                 </div>
               ))}
