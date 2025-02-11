@@ -5,7 +5,7 @@ import "./single.scss";
 // import List from "../../components/table/Table";
 
 import AdminNavbar from "../../components/adminNavbar/AdminNavbar";
-import AdminSidebar from "../../components/adminSidebar/AdminSidebar";
+import AdminSidebar from "../../components/mySidebar/AdminSidebar";
 // import Chart from "../../components/chart/Chart";
 import List from "../list/List";
 

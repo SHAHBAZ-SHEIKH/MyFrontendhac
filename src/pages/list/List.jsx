@@ -1,6 +1,6 @@
 import "./list.scss"
 import AdminNavbar from "../../components/adminNavbar/AdminNavbar"
-import AdminSidebar from "../../components/adminSidebar/AdminSidebar"
+import AdminSidebar from "../../components/mySidebar/AdminSidebar"
 import Datatable from "../../components/datatable/Datatable"
 import { useContext } from "react";
 import { DarkModeContext } from "../../context/darkModeContext";
