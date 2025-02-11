@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { saveLoanDetails } from "@/redux/loanRequestSlice";
+import { saveLoanDetails } from "../../redux/loanRequestSlice";
 import ShowPopup from "../ShowPopup";
 import { toast,ToastContainer } from "react-toastify";
 

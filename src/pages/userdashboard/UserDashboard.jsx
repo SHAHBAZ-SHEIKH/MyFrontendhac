@@ -1,6 +1,6 @@
 import React, { useState,useEffect } from "react";
 import { useSelector } from "react-redux";
-import UserLoanRequestCard from "@/components/userLoanRequest/UserLoanRequestCard";
+
 import axios from "axios";
 import UserSidebar from "../../components/userSidebar/UserSidebar";
 import UserNavbar from "../../components/userNavbar/UserNavbar";
